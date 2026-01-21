@@ -1,0 +1,63 @@
+import { Plan } from "@/components/nyro/PlanCard";
+
+// Mock data for demonstration
+export const mockPlans: Plan[] = [
+  {
+    id: "1",
+    title: "Late Night Ramen Run",
+    location: "Ichiran Midtown",
+    time: "Tonight, 11pm",
+    hostName: "Alex",
+    hostAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=alex",
+    attendeeCount: 4,
+    maxAttendees: 6,
+  },
+  {
+    id: "2",
+    title: "Sunrise Hike at Runyon",
+    location: "Runyon Canyon",
+    time: "Tomorrow, 6am",
+    hostName: "Jordan",
+    hostAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=jordan",
+    attendeeCount: 7,
+    maxAttendees: 12,
+  },
+  {
+    id: "3",
+    title: "Coffee & Code Session",
+    location: "Blue Bottle DTLA",
+    time: "Today, 3pm",
+    hostName: "Sam",
+    hostAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sam",
+    attendeeCount: 3,
+  },
+  {
+    id: "4",
+    title: "Pickup Basketball",
+    location: "Venice Beach Courts",
+    time: "Saturday, 10am",
+    hostName: "Marcus",
+    hostAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=marcus",
+    attendeeCount: 8,
+    maxAttendees: 10,
+  },
+  {
+    id: "5",
+    title: "Gallery Opening + Drinks",
+    location: "Hauser & Wirth",
+    time: "Friday, 7pm",
+    hostName: "Riley",
+    hostAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=riley",
+    attendeeCount: 12,
+  },
+  {
+    id: "6",
+    title: "Taco Tuesday Crawl",
+    location: "Starting at Guisados",
+    time: "Tuesday, 6pm",
+    hostName: "Chris",
+    hostAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=chris",
+    attendeeCount: 5,
+    maxAttendees: 8,
+  },
+];

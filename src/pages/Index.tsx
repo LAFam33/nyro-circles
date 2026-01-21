@@ -1,12 +1,46 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import BottomNav from "@/components/nyro/BottomNav";
+import RadarScreen from "@/pages/RadarScreen";
+import LensScreen from "@/pages/LensScreen";
+import CirclesScreen from "@/pages/CirclesScreen";
+import { AnimatePresence, motion } from "framer-motion";
+
+type NavTab = "radar" | "lens" | "circles";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState<NavTab>("radar");
+
+  const renderScreen = () => {
+    switch (activeTab) {
+      case "radar":
+        return <RadarScreen />;
+      case "lens":
+        return <LensScreen />;
+      case "circles":
+        return <CirclesScreen />;
+      default:
+        return <RadarScreen />;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 30,
+          }}
+        >
+          {renderScreen()}
+        </motion.div>
+      </AnimatePresence>
+      <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
   );
 };
